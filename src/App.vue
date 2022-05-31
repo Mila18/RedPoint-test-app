@@ -1,30 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <div class="app">
+        <ticket-form @create="createTicket"/>
+        <tickets-list :tickets="tickets"/>
+    </div>
 </template>
 
+<script>
+    import TicketForm from './components/TicketForm.vue';
+    import TicketsList from './components/TicketsList.vue';
+
+    export default {
+        components:{
+            TicketsList, TicketForm
+        },
+        data(){
+            return{
+               tickets: [
+                   {id: 1, title: 'javascript', body: 'Описание поста'},
+                   {id: 2, title: 'javascript', body: 'Описание поста 2'},
+                   {id: 3, title: 'javascript', body: 'Описание поста 3'},
+                   {id: 4, title: 'javascript', body: 'Описание поста 4'},
+               ],
+            }
+        },
+        methods:{
+           createTicket(ticket){
+              this.tickets.push(ticket);
+           },
+        }
+    }
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.app{
+    padding: 20px ;
 }
 </style>
