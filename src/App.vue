@@ -1,37 +1,16 @@
 <template>
     <div class="app">
-        <ticket-form @create="createTicket"/>
-        <tickets-list :tickets="tickets"/>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import TicketForm from './components/TicketForm.vue';
-    import TicketsList from './components/TicketsList.vue';
-
-    export default {
-        components:{
-            TicketsList, TicketForm
-        },
-        data(){
-            return{
-               tickets: [
-                   {id: 1, title: 'javascript', body: 'Описание поста'},
-                   {id: 2, title: 'javascript', body: 'Описание поста 2'},
-                   {id: 3, title: 'javascript', body: 'Описание поста 3'},
-                   {id: 4, title: 'javascript', body: 'Описание поста 4'},
-               ],
-            }
-        },
-        methods:{
-           createTicket(ticket){
-              this.tickets.push(ticket);
-           },
-        }
-    }
+export default {
+    
+}
 </script>
 
-<style>
+<style scoped>
 *{
     margin: 0;
     padding: 0;
