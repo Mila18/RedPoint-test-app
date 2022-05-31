@@ -16,7 +16,7 @@
             placeholder="Описание"
             />
 
-            <button class="btn" @click="createTicket">Создать</button>
+            <button class="btn btn-success" @click="createTicket">Создать</button>
         </form>
 </template>
 
@@ -59,10 +59,5 @@ form{
 .btn{
     align-self: flex-end;
     margin-top: 15px;
-    padding: 10px 15px;
-    background: none;
-    color: teal;
-    border: 1px solid teal;
-
 }
 </style>
