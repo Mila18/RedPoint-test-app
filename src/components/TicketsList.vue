@@ -1,7 +1,17 @@
 <template>
     <div>
-        <h3>Список постов</h3>
-        <ticket v-for="ticket in tickets" :ticket="ticket"/>
+        <h3>Список тикетов</h3>
+        <table class="table table-hover">
+            <thead>
+            <tr style="background-color:aliceblue;">
+                <th>Заголовок</th>
+                <th>Описание</th>
+                <th>id</th>
+            </tr>
+            </thead>
+            
+            <ticket v-for="ticket in tickets" :ticket="ticket"/>
+        </table>
     </div>
 </template>
 

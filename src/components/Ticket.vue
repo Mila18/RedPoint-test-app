@@ -1,8 +1,20 @@
 <template>
-    <div class="ticket">
-            <div><strong>Название: </strong>{{ticket.title}}</div> 
-            <div><strong>Описание: </strong>{{ticket.body}}</div> 
-    </div>
+<tbody>
+    <tr>
+        <td class="table-light">
+            {{ticket.title}} 
+        </td>
+        <td class="table-light">
+            {{ticket.body}}
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+</tbody>
+    
+   
+             
 </template>
 
 <script>

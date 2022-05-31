@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <ticket-form @create="createTicket"/>
-        <tickets-list :tickets="tickets"/>
+    <div class="row">
+        <ticket-form @create="createTicket" class="m-3 col3"/>
+        <tickets-list :tickets="tickets" class="m-3 col"/>
     </div>
 </template>
 

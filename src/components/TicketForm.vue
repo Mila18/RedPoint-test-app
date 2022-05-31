@@ -1,23 +1,18 @@
 <template>
-     <form @submit.prevent>
-            <h4>Создание тикета</h4>
-
-            <input 
-            v-model="ticket.title"
-            class="input" 
-            type="text" 
-            placeholder="Название"
-            />
-            
-            <input 
-            v-model="ticket.body"
-            class="input" 
-            type="text" 
-            placeholder="Описание"
-            />
-
-            <button class="btn btn-success" @click="createTicket">Создать</button>
+    <div style="width: 25rem; background-color: aliceblue;">
+        <form class="p-2" @submit.prevent>
+        <h3 class="mb-5">Создание нового тикета</h3>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Заголовок</label>
+            <input type="text" class="form-control" v-model="ticket.title">
+        </div>
+        <div class="mb-3">
+            <label for="password-input" class="form-label">Описание</label>
+            <textarea class="form-control" rows="3" v-model="ticket.body"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" @click="createTicket">Создать</button>
         </form>
+    </div>
 </template>
 
 <script>
