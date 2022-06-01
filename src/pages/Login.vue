@@ -1,6 +1,6 @@
 <template>
     <div style="width: 25rem; background-color: aliceblue; margin-left: auto; margin-right: auto;">
-        <form class="p-5 mt-5" >
+        <form class="p-5 mt-5">
         <h2 class="mb-5">Авторизация</h2>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Логин</label>
@@ -15,7 +15,7 @@
                 <span class="password-control view" v-show="showPass"></span>
             </a>
         </div>
-        <button type="submit" class="btn btn-primary" @click="login">Войти</button>
+        <button type="submit" class="btn btn-primary" @click.prevent="login">Войти</button>
         </form>
     </div>
 </template>

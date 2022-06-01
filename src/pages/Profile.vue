@@ -55,8 +55,15 @@
                         <select class="form-select col selectItem">
                         <option selected>Оренбург</option>
                         <option value="1">Глазго</option>
-                        <option value="2">Москва</option>
-                        <option value="3">Медногорск</option>
+                        <option value="2">Таллин</option>
+                        <option value="3">Осло</option>
+                        <option value="4">Вильнюс</option>
+                        <option value="5">Тбилиси</option>
+                        <option value="6">Тарту</option>
+                        <option value="7">Берлин</option>
+                        <option value="8">Стокгольм</option>
+                        <option value="9">Уральск</option>
+                        <option value="10">Киев</option>
                         </select>
                   </div>
                   <hr>

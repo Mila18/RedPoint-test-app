@@ -12,7 +12,7 @@
                 <a class="nav-link" aria-current="page" @click="$router.push('/profile')">Профиль</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" @click="$router.push('/ticket')">Тикеты</a>
+                <a class="nav-link" @click="$router.push('/ticket')">Список обращений</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" @click="$router.push('/login')">Выполнить вход</a>

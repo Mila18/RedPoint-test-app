@@ -7,8 +7,8 @@
         <td class="table-light">
             {{ticket.body}}
         </td>
-        <td>
-            
+        <td class="table-light">
+            {{ticket.id}}
         </td>
     </tr>
 </tbody>
