@@ -1,6 +1,6 @@
 <template>
     <div style="width: 25rem; background-color: aliceblue; margin-left: auto; margin-right: auto;">
-        <form class="p-5 mt-5">
+        <form class="p-5 mt-5" >
         <h2 class="mb-5">Авторизация</h2>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Логин</label>
@@ -15,19 +15,26 @@
                 <span class="password-control view" v-show="showPass"></span>
             </a>
         </div>
-        <button type="submit" class="btn btn-primary">Войти</button>
+        <button type="submit" class="btn btn-primary" @click="login">Войти</button>
         </form>
     </div>
 </template>
 
 <script>
+import '../router/router'
 export default {
     el: '#password',
    data(){
-       return{
+       return{ 
         showPass: false,
-        password: ''
+        password: '',
        } 
+   },
+   methods:{
+       login(){
+           localStorage.setItem('isAuth', true);
+           this.$router.push('/');
+       }
    }
 }
 </script>

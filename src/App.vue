@@ -17,6 +17,9 @@
                 <li class="nav-item">
                 <a class="nav-link" @click="$router.push('/login')">Выполнить вход</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" @click="logout">Выйти</a>
+                </li>
             </ul>
             </div>
         </div>
@@ -24,15 +27,17 @@
     <div class="app">
         <router-view></router-view>
     </div>
-
-    
-</div>
-    
+</div>  
 </template>
 
 <script>
 export default {
-    
+     methods:{
+         logout(){
+           localStorage.setItem('isAuth', "");
+           this.$router.push('/login');
+       }
+     }
 }
 </script>
 
