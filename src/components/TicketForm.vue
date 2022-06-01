@@ -1,16 +1,16 @@
 <template>
-    <div style="width: 25rem; background-color: aliceblue;">
-        <form class="p-2" @submit.prevent>
-        <h3 class="mb-5">Создание нового тикета</h3>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Заголовок</label>
-            <input type="text" class="form-control" v-model="ticket.title">
-        </div>
-        <div class="mb-3">
-            <label for="password-input" class="form-label">Описание</label>
-            <textarea class="form-control" rows="3" v-model="ticket.body"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" @click="createTicket">Создать</button>
+    <div style="width: 25rem; height: 25em; background-color: aliceblue;">
+        <form class="p-2 form">
+            <h3 class="mb-5">Создание нового тикета</h3>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Заголовок</label>
+                <input type="text" class="form-control" v-model="ticket.title">
+            </div>
+            <div class="mb-3">
+                <label for="password-input" class="form-label">Описание</label>
+                <textarea class="form-control" rows="3" v-model="ticket.description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" @click="addTicket">Создать</button>
         </form>
     </div>
 </template>
@@ -21,25 +21,22 @@ export default {
         return{
             ticket:{
                 title:'',
-                body:''
+                description:''
             }
         }
     },
     methods:{
-        createTicket(){
-                this.ticket.id = Date.now();
-                this.$emit('create', this.ticket)
-                this.ticket = {
-                    title:'',
-                    body:''
-                }
-        }
+        addTicket(){
+                this.axios
+                .post('https://localhost:5001/Tickets',this.ticket)
+            }
     }
 }
 </script>
 
 <style scoped>
-form{
+
+.form{
     display: flex;
     flex-direction: column;
 }

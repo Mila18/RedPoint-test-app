@@ -9,29 +9,44 @@
                 <th>id</th>
             </tr>
             </thead>
-            
-            <ticket v-for="ticket in tickets" :ticket="ticket"/>
+            <tbody>
+            <tr v-for="ticket in ticketsList">
+                <td class="table-light">
+                    {{ticket.title}}
+                </td>
+                <td class="table-light">
+                    {{ticket.description}}
+                </td>
+                <td class="table-light">
+                    {{ticket.id}} 
+                </td>
+            </tr>
+            </tbody>
         </table>
     </div>
 </template>
 
 <script>
-import Ticket from './Ticket.vue'
+import '../router/router'
     export default{
-  components: { Ticket },
-        props:{
-            tickets:{
-                type: Array,
-                required: true,
+        data(){
+            return{
+                ticketsList:null
             }
+        },
+        methods:{
+            getList(){
+                this.axios.get('https://localhost:5001/Tickets').then((response)=> {
+                    this.ticketsList = response.data;         
+                    })
+                this.$router.push('/ticket');
+            }   
+        },
+        mounted(){
+            this.getList();
         }
     }
 </script>
 
-<style scoped>
-.ticket {
-    padding: 15px;
-    border: 2px solid teal;
-    margin-top: 15px;
-}
+<style>
 </style>
